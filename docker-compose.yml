@@ -18,5 +18,13 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  studentportfolio:
+    build: ./studentportfolio
+    ports:
+      - "3000:80"
+    hostname: studentportfolio
+    container_name: studentportfolio
+    restart: unless-stopped
+
 volumes:
   mongo_data:
